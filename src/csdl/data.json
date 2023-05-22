@@ -1,0 +1,294 @@
+{
+    "cities": [
+      {
+        "cityCode": 70000,
+        "cityName": "Hồ Chí Minh",
+        "cityInfo": [
+          {
+            "nameDist": "Bình Tân",
+            "wards": [
+              {
+                "nameWard": "Bình Hưng Hoà A",
+                "streets": [
+                  "Đường số 6",
+                  "Đường Số 14",
+                  "Lê Văn Quới"
+                ]
+              },
+              {
+                "nameWard": "Bình Trị Đông",
+                "streets": [
+                  "Đường Bình Trị Đông",
+                  "Tỉnh lộ 10",
+                  "Lê Văn Quới"
+                ]
+              },
+              {
+                "nameWard": "Bình Trị Đông B",
+                "streets": [
+                  "Đường số 21",
+                  "Đường Kinh Dương Vương",
+                  "Đường số 28"
+                ]
+              }
+            ]
+          },
+          {
+            "nameDist": "Tân Phú",
+            "wards": [
+              {
+                "nameWard": "Hiệp Tân",
+                "streets": [
+                  "Hoà Bình",
+                  "Tô Hiệu",
+                  "Phan Anh"
+                ]
+              },
+              {
+                "nameWard": "Sơn Kỳ",
+                "streets": [
+                  "Tân Kỳ-Tân Quý",
+                  "Sơn Kỳ",
+                  "Lê Trọng Tấn"
+                ]
+              }
+            ]
+          },
+          {
+            "nameDist": "Bình Thạnh",
+            "wards": [
+              {
+                "nameWard": "Phường 25",
+                "streets": [
+                  "Điện Biên Phủ",
+                  "Phan Văn Hân",
+                  "Đinh Bộ Lĩnh"
+                ]
+              },
+              {
+                "nameWard": "Phường 21",
+                "streets": [
+                  "Điện Biên Phủ",
+                  "Xô Viết Nghệ Tĩnh",
+                  "Nguyễn Xí"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityCode": 850000,
+        "cityName": "Long An",
+        "cityInfo": [
+          {
+            "nameDist": "Cần Đước",
+            "wards": [
+              {
+                "nameWard": "Xã Long Hòa",
+                "streets": [
+                  "Đường số 6",
+                  "Đường Số 14",
+                  "Đường số 1"
+                ]
+              },
+              {
+                "nameWard": "Xã Tân Trạch",
+                "streets": [
+                  "Ấp 1",
+                  "Ấp 2",
+                  "Ấp 3"
+                ]
+              },
+              {
+                "nameWard": "Bình Trị Đông B",
+                "streets": [
+                  "Ấp 1",
+                  "Ấp 2",
+                  "Ấp 3"
+                ]
+              }
+            ]
+          },
+          {
+            "nameDist": "Đức Hoà",
+            "wards": [
+              {
+                "nameWard": "Xã Đức Hòa Đông",
+                "streets": [
+                  "Ấp 1",
+                  "Ấp 2",
+                  "Ấp 3"
+                ]
+              },
+              {
+                "nameWard": "Xã Đức Hoà Tây",
+                "streets": [
+                  "Ấp 1",
+                  "Ấp 2",
+                  "Ấp 3"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "costs":[
+        "Tất cả các mức giá",
+        "Dưới 1 tỷ",
+        "Dưới 2 tỷ",
+        "Từ 2 - 3 tỷ",
+        "Từ 3 - 5 tỷ",
+        "Từ 5 - 7 tỷ",
+        "Từ 7 - 10 tỷ",
+        "Từ 10 - 20 tỷ", 
+        "Từ 20 - 30 tỷ",
+        "Từ 30 - 40 tỷ",
+        "Từ 40 - 60 tỷ",
+        "Trên 60 tỷ"
+    ],
+    "areas":[
+        "Tất cả các mức diện tích",
+        "Dưới 30m2",
+        "30-50m2",
+        "50 - 80m2",
+        "80 - 100m2",
+        "100 - 150m2",
+        "150 - 200m2",
+        "200 - 250m2", 
+        "250 - 300m2",
+        "300 - 500m2",
+        "Trên 500m2"
+    ],
+    "homies":[
+      {
+        "id": 1,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 2,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 3,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 4,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 5,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 6,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 7,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      },
+      {
+        "id": 8,
+        "img": "../assets/bg-full-0.jpg",
+        "title":"Chỉ từ 2,2 tỷ sở hữu ngay căn 63,6 m2 dự án Eco City KĐT Việt Hưng",
+        "area": "40",
+        "price": 2000000000,
+        "bedroom": 2,
+        "wc": 2,
+        "numberOfStoreys": 2,
+        "description": "",
+        "city": "Hồ Chí Minh",
+        "district": "Bình Tân",
+        "ward": "Bình Hưng Hoà A",
+        "street": "Đường số 14",
+        "housenumber": "23/23 Tên Lửa"
+      }
+    ]
+}
