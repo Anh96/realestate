@@ -430,6 +430,8 @@ main{
   }
   .filter-popup-body-select-item-text,
   .filter-popup-body-select-item-icon{
+    background-color: aqua;
+
   }
   .listing-filter-popup-location{
     

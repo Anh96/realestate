@@ -66,7 +66,8 @@ main{
     text-transform: normal;
 }
 /* Icons */
-.bi-chevron-right{
+.bi-chevron-right,
+.bi-x{
     font-size: 20px;
 }
 /* flex */

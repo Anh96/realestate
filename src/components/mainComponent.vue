@@ -24,7 +24,7 @@
                             <input type="search" name="" class="pd-10" placeholder="Nhập tên quận/dự án cần tìm">
                         </div>
                         <ul class="home-filter home-filter--list">
-                            <div class="home-filter__item home-filter__item-location pd-10">
+                            <li class="home-filter__item home-filter__item-location pd-10">
                                 <div class="select-text" v-on:click="toggleParentLocation()">
                                     <div class="white-text flex">Chọn nơi bán</div>
                                     <div class="flex">
@@ -33,16 +33,28 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="listing-filter-popup listing-filter-popup-location-inner" v-if="parentLocationState">
+                                <div class="listing-filter-popup listing-filter-popup-location-inner" v-show="parentLocationState">
                                     <div class="listing-filter-popup-header gray-text pd-10">Chọn khu vực</div>
                                     <div class="listing-filter-popup-body gray-text pd-10">
-                                        <div class="filter-popup-body-select-item pd-10" v-on:click="detailLocationState=!detailLocationState; cityState = !cityState; toggleParentLocation()">
-                                            <div class="filter-popup-body-select-item-text">Tỉnh/Thành phố</div>
-                                            <i class="bi bi-chevron-right gray-text flex-center" v-show="!rightArrowIconState"></i>
-                                            <i class="bi bi-x gray-text flex-center" v-show="closeIconState"></i>
+                                        <div class="filter-popup-body-select-item pd-10">
+                                            <div class="filter-popup-body-select-item-text full-w" :city-name="currentCityName"
+                                            v-on:click="detailLocationState=!detailLocationState; cityState = !cityState;toggleParentLocation()">
+                                            {{ currentCityName }}</div>
+                                            <div class="filter-popup-body-select-item-icon city-icon-group flex-center">
+                                                <i class="bi bi-chevron-right gray-text flex-center"
+                                                    v-on:click="detailLocationState=!detailLocationState; cityState = !cityState;toggleParentLocation()"
+                                                    v-show="!rightArrowIconState">
+                                                </i>
+                                                <i class="bi bi-x gray-text flex-center" 
+                                                    v-show="closeIconState"
+                                                    @click="toggleRightArrowIcon(); 
+                                                    toggleCloseIcon(); 
+                                                    currentCityName = originCityName">
+                                                </i>
+                                            </div>
                                         </div>
                                         <div class="filter-popup-body-select-item pd-10">
-                                            <div class="filter-popup-body-select-item-text">Quận/Huyện</div>
+                                            <div class="filter-popup-body-select-item-text full-w">Quận/Huyện</div>
                                             <i class="bi bi-chevron-right gray-text flex-center" v-show="!rightArrowIconState"></i>
                                             <i class="bi bi-x gray-text flex-center" v-show="closeIconState"></i>
                                         </div>
@@ -65,29 +77,27 @@
                                         <button type="submit" class="pd-10 apply-button white-text">Áp dụng</button>
                                     </div>
                                 </div>
+                                <!-- DETAIL LOCATION -->
                                 <div class="listing-filter-popup-location" v-show="detailLocationState">
                                     <div class="listing-filter-popup-location-body gray-text pd-10">
                                         <div class="listing-filter-city-location" v-show="cityState">
-                                            <div class="filter-popup-body-select-item pd-10" 
-                                                v-for = "(city) in data.cities" :key= "city.cityCode"
-                                                v-on:click="toggleDist(); cityState =! cityState">
-                                                <div class="filter-popup-body-select-item-text">{{ city.cityName }}</div>
-                                                <i class="bi bi-chevron-right gray-text flex-center" v-show="!rightArrowIconState"></i>
-                                                <i class="bi bi-x gray-text flex-center" v-show="closeIconState"></i>
+                                            <div class="filter-popup-body-select-item pd-10"
+                                                v-for = "(city, index) in data.cities" :key= "city.cityCode"
+                                                v-on:click="toggleDetailLocation();toggleCity(index); toggleParentLocation()">
+                                                <div class="filter-popup-body-select-item-text" ref="cityname">{{ city.cityName }}</div>
+                                                <i class="bi bi-chevron-right gray-text flex-center"></i>
                                             </div>
                                         </div>
                                         <div class="listing-filter-district-location" v-for="(info, infoIndex) in data.cities" :key="infoIndex">
                                             <div class="filter-popup-body-select-item pd-10" v-for="(value,index) in info.cityInfo" :key="index" v-show = "distState">
                                                 <div class="filter-popup-body-select-item-text">{{ value.nameDist}}</div>
-                                                <i class="bi bi-chevron-right gray-text flex-center" v-show="!rightArrowIconState"></i>
-                                                <i class="bi bi-x gray-text flex-center" v-show="closeIconState"></i>
+                                                <i class="bi bi-chevron-right gray-text flex-center"></i>
                                             </div>
                                         </div>
                                         <div class="listing-filter-ward-location">
                                             <div class="filter-popup-body-select-item pd-10">
                                                 <div class="filter-popup-body-select-item-text">Binh Hung Hoa</div>
-                                                <i class="bi bi-chevron-right gray-text flex-center" v-show="!rightArrowIconState"></i>
-                                                <i class="bi bi-x gray-text flex-center" v-show="closeIconState"></i>
+                                                <i class="bi bi-chevron-right gray-text flex-center"></i>
                                             </div>
                                         </div>
                                         <div class="listing-filter-street-location">
@@ -102,7 +112,7 @@
                                         <button type="submit" class="pd-10 apply-button white-text">Áp dụng</button>
                                     </div> -->
                                 </div>
-                            </div>
+                            </li>
                             <li class="home-filter__item home-filter__item-progress-general home-filter__item-cost pd-10">
                                 <div class="select-text">
                                     <div class="white-text flex">Mức giá </div>
@@ -182,10 +192,12 @@ export default {
     data(){
         return {
             data: data,
-            citySelected: 0,
+            citySelected: null,
             distSelected: 0,
             wardSelected: 0,
             streetSelected: 0,
+            rightArrIconSelectd: 0,
+            closeIconSelected: 0,
             parentLocationState: false,
             detailLocationState: false,
             cityState: false,
@@ -194,6 +206,8 @@ export default {
             streetState: false,
             rightArrowIconState: false,
             closeIconState: false,
+            originCityName: "Tỉnh/Thành phố",
+            currentCityName: "Tỉnh/Thành phố"
         }
     },
     components:{
@@ -207,8 +221,10 @@ export default {
         toggleDetailLocation: function(){
             return this.detailLocationState = !this.detailLocationState;
         },
-        toggleCity: function(){
-            return this.cityState = !this.cityState;
+        toggleCity: function(currindex){
+            this.cityState = !this.cityState;
+            this.handleCity(currindex);
+            this.handleIcons()
         },
         toggleDist: function(){
             return this.distState = !this.distState;
@@ -218,14 +234,27 @@ export default {
         },
         toggleStreet: function(){
             return this.streetState = !this.streetState;
+        },
+        toggleRightArrowIcon: function(currIndex){
+            this.rightArrowIconState = ! this.rightArrowIconState;
+        },
+        toggleCloseIcon: function(currIndex){
+            this.closeIconState = ! this.$el[currIndex].closeIconState;
+        },
+        handleCity: function(currIndex){
+            this.currentCityName = this.$refs.cityname[currIndex].innerHTML;
+        },
+        handleIcons: function(){
+            
         }
-        
+    },
+    computed:{
     },
     props:{
-
+        // currentCityName: String
+        
     },
     emits: {
-
     }
 }
 </script>
